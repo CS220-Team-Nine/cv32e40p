@@ -15,7 +15,7 @@ def sim(arg=None):
             print("Compilation failed:", e)
             return
     elif (arg == "mult"):
-        compile_command = "vcs -sverilog ../rtl/include/cv32e40p_pkg.sv  ../rtl/cv32e40p_mult.sv mult_tb.sv -full64 -P /usr/local/synopsys/verdi/V-2023.12-SP2-5/share/PLI/VCS/LINUX64/novas.tab /usr/local/synopsys/verdi/V-2023.12-SP2-5/share/PLI/VCS/LINUX64/pli.a -R -q"
+        compile_command = "vcs -sverilog ../rtl/include/cv32e40p_pkg.sv  ../rtl/cv32e40p_mult.sv mult_tb.sv -full64 -P /usr/local/synopsys/verdi/V-2023.12-SP2-5/share/PLI/VCS/LINUX64/novas.tab /usr/local/synopsys/verdi/V-2023.12-SP2-5/share/PLI/VCS/LINUX64/pli.a -R -q -o mult_simv"
         compile_directory = "./sim/"
         try:
             subprocess.call(compile_command, cwd=compile_directory, shell=True)
@@ -24,7 +24,7 @@ def sim(arg=None):
             print("Compilation for mult failed:", e)
             return
     elif (arg == "controller"):
-        compile_command = "vcs -sverilog ../rtl/include/cv32e40p_pkg.sv  ../rtl/cv32e40p_controller.sv controller_tb.sv -full64 -P /usr/local/synopsys/verdi/V-2023.12-SP2-5/share/PLI/VCS/LINUX64/novas.tab /usr/local/synopsys/verdi/V-2023.12-SP2-5/share/PLI/VCS/LINUX64/pli.a -R -q"
+        compile_command = "vcs -sverilog ../rtl/include/cv32e40p_pkg.sv ../rtl/cv32e40p_controller_COREV_CLUSTER.sv controller_corev_cluster_tb.sv -full64 -debug_access -P /usr/local/synopsys/verdi/V-2023.12-SP2-5/share/PLI/VCS/LINUX64/novas.tab /usr/local/synopsys/verdi/V-2023.12-SP2-5/share/PLI/VCS/LINUX64/pli.a -R -q -o controller_simv +neg_tchk -sdf max:cv32e40p_controller_corev_cluster_tb.u_cv32e40p_controller_COREV_CLUSTER:../syn/cv32e40p_controller_COREV_CLUSTER_const.sdf  -v /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/verilog/saed32nm.v"
         compile_directory = "./sim/"
         try:
             subprocess.call(compile_command, cwd=compile_directory, shell=True)
@@ -32,6 +32,7 @@ def sim(arg=None):
         except subprocess.CalledProcessError as e:
             print("Compilation for controller failed:", e)
             return
+
     
 def clean_sim(arg=None):
     # Clean the simulation directory
@@ -45,7 +46,7 @@ def clean_sim(arg=None):
 
 def syn(arg=None):
     # Run the DC shell script
-    dc_command = "dc_shell -x \"source "+ arg +".tcl\""
+    dc_command = "dc_shell -f " + arg + ".tcl"
     dc_directory = "./syn/"
     try:
         subprocess.call(dc_command, cwd=dc_directory, shell=True)
@@ -65,7 +66,7 @@ def clean_syn(arg=None):
 
 def ptpx(arg=None):
     # Run the PTPX script
-    ptpx_command = "ptpx -x \"source "+ arg +".tcl\""
+    ptpx_command = "pt_shell -f "+ arg +".tcl"
     ptpx_directory = "./ptpx/"
     try:
         subprocess.call(ptpx_command, cwd=ptpx_directory, shell=True)
@@ -82,3 +83,19 @@ def clean_ptpx(arg=None):
         print("PTPX clean successful.")
     except subprocess.CalledProcessError as e:
         print("PTPX clean failed:", e)
+
+
+clean_sim()
+clean_syn()
+clean_ptpx()
+
+sim()
+sim("mult")
+sim("controller")
+
+syn("compile")
+syn("mult")
+syn("controller_COREV_CLUSTER")
+
+ptpx("mult")
+ptpx("controller_COREV_CLUSTER")
