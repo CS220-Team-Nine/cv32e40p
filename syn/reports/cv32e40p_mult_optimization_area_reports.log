@@ -1,0 +1,44 @@
+****************************************
+Report : area
+Design : cv32e40p_mult_optimization
+Version: T-2022.03-SP3
+Date   : Mon Jun  2 06:09:01 2025
+****************************************
+
+Library(s) Used:
+
+    saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_ss0p75v125c.db)
+
+Number of ports:                          808
+Number of nets:                          7389
+Number of cells:                         5384
+Number of combinational cells:           5112
+Number of sequential cells:               268
+Number of macros/black boxes:               0
+Number of buf/inv:                        468
+Number of references:                      34
+
+Combinational area:              15935.337063
+Buf/Inv area:                      678.056205
+Noncombinational area:            1907.096609
+Macro/Black Box area:                0.000000
+Net Interconnect area:            4980.954854
+
+Total cell area:                 17842.433672
+Total area:                      22823.388526
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  -----------------------------
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  -----------------------------------------------
+cv32e40p_mult_optimization        17842.4337    100.0   3776.0716  1907.0966  0.0000  cv32e40p_mult_optimization
+DP_OP_107_125_268                  3609.8613     20.2   3609.8613     0.0000  0.0000  cv32e40p_mult_optimization_DP_OP_107_125_268_0
+DP_OP_108_126_7310                 2294.4120     12.9   2294.4120     0.0000  0.0000  cv32e40p_mult_optimization_DP_OP_108_126_7310_0
+DP_OP_109_122_7169                 2685.5396     15.1   2685.5396     0.0000  0.0000  cv32e40p_mult_optimization_DP_OP_109_122_7169_0
+DP_OP_110_123_1003                 3569.4525     20.0   3569.4525     0.0000  0.0000  cv32e40p_mult_optimization_DP_OP_110_123_1003_0
+--------------------------------  ----------  -------  ----------  ---------  ------  -----------------------------------------------
+Total                                                  15935.3371  1907.0966  0.0000
