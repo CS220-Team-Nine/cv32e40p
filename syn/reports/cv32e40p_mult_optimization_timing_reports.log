@@ -1,0 +1,179 @@
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : cv32e40p_mult_optimization
+Version: T-2022.03-SP3
+Date   : Mon Jun  2 06:09:00 2025
+****************************************
+
+Operating Conditions: ss0p75v125c   Library: saed32rvt_ss0p75v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: mulh_CS_reg_2_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: result_o[27]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cv32e40p_mult_optimization
+                     35000                 saed32rvt_ss0p75v125c
+  cv32e40p_mult_optimization_DP_OP_109_122_7169_0
+                     8000                  saed32rvt_ss0p75v125c
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                       Fanout     Trans      Incr       Path      Attributes
+  ---------------------------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (propagated)                               7935.40    7935.40
+  mulh_CS_reg_2_/CLK (DFFARX1_RVT)                        0.00      0.00    7935.40 r    inf
+  mulh_CS_reg_2_/Q (DFFARX1_RVT)                          0.07      0.34    7935.74 r
+  mulh_CS[2] (net)                              4                   0.00    7935.74 r
+  U979/Y (OR2X1_RVT)                                      0.05      0.35    7936.09 r
+  N245 (net)                                    2                   0.00    7936.09 r
+  U860/Y (NOR2X0_RVT)                                     0.05      0.24    7936.33 f
+  n698 (net)                                    4                   0.00    7936.33 f
+  U990/Y (OR2X1_RVT)                                      0.06      0.38    7936.71 f
+  mulh_save (net)                               5                   0.00    7936.71 f
+  U370/Y (OR2X1_RVT)                                      0.04      0.51    7937.22 f
+  multicycle_o (net)                            2                   0.00    7937.22 f
+  U991/Y (OR3X1_RVT)                                      0.07      0.19    7937.41 f
+  n870 (net)                                    3                   0.00    7937.41 f
+  U790/Y (MUX21X2_RVT)                                    0.09      0.41    7937.82 f
+  n448 (net)                                    5                   0.00    7937.82 f
+  U867/Y (INVX1_RVT)                                      0.06      0.48    7938.29 r
+  n701 (net)                                    3                   0.00    7938.29 r
+  U258/Y (AO22X1_RVT)                                     0.10      0.30    7938.59 r
+  short_op_a[0] (net)                           6                   0.00    7938.59 r
+  DP_OP_109_122_7169/I1[0] (cv32e40p_mult_optimization_DP_OP_109_122_7169_0)
+                                                                    0.00    7938.59 r
+  DP_OP_109_122_7169/I1[0] (net)                                    0.00    7938.59 r
+  DP_OP_109_122_7169/U779/Y (NBUFFX2_RVT)                 0.05      0.75    7939.34 r
+  DP_OP_109_122_7169/n971 (net)                 3                   0.00    7939.34 r
+  DP_OP_109_122_7169/U822/Y (INVX1_RVT)                   0.04      0.18    7939.52 f
+  DP_OP_109_122_7169/n1402 (net)                4                   0.00    7939.52 f
+  DP_OP_109_122_7169/U1369/Y (NAND3X0_RVT)                0.31      0.43    7939.95 r
+  DP_OP_109_122_7169/n1378 (net)               16                   0.00    7939.95 r
+  DP_OP_109_122_7169/U1341/Y (OR2X1_RVT)                  0.07      7.95    7947.90 r
+  DP_OP_109_122_7169/n1312 (net)                1                   0.00    7947.90 r
+  DP_OP_109_122_7169/U1331/Y (NAND2X0_RVT)                0.06      0.07    7947.97 f
+  DP_OP_109_122_7169/n1310 (net)                1                   0.00    7947.97 f
+  DP_OP_109_122_7169/U1360/Y (AOI21X1_RVT)                0.04      0.15    7948.12 r
+  DP_OP_109_122_7169/n1311 (net)                1                   0.00    7948.12 r
+  DP_OP_109_122_7169/U989/Y (OAI21X1_RVT)                 0.06      0.20    7948.32 f
+  DP_OP_109_122_7169/n1304 (net)                1                   0.00    7948.32 f
+  DP_OP_109_122_7169/U758/Y (XOR2X2_RVT)                  0.07      0.17    7948.48 f
+  DP_OP_109_122_7169/n580 (net)                 1                   0.00    7948.48 f
+  DP_OP_109_122_7169/U259/CO (FADDX1_RVT)                 0.08      0.22    7948.70 f
+  DP_OP_109_122_7169/n385 (net)                 1                   0.00    7948.70 f
+  DP_OP_109_122_7169/U257/S (FADDX1_RVT)                  0.08      0.34    7949.05 r
+  DP_OP_109_122_7169/n382 (net)                 1                   0.00    7949.05 r
+  DP_OP_109_122_7169/U120/CO (FADDX1_RVT)                 0.08      0.23    7949.28 r
+  DP_OP_109_122_7169/n119 (net)                 1                   0.00    7949.28 r
+  DP_OP_109_122_7169/U119/CO (FADDX1_RVT)                 0.08      0.21    7949.48 r
+  DP_OP_109_122_7169/n118 (net)                 1                   0.00    7949.48 r
+  DP_OP_109_122_7169/U118/CO (FADDX1_RVT)                 0.08      0.21    7949.69 r
+  DP_OP_109_122_7169/n117 (net)                 1                   0.00    7949.69 r
+  DP_OP_109_122_7169/U117/CO (FADDX1_RVT)                 0.10      0.23    7949.92 r
+  DP_OP_109_122_7169/n116 (net)                 3                   0.00    7949.92 r
+  DP_OP_109_122_7169/U1001/Y (OR2X1_RVT)                  0.04      0.31    7950.22 r
+  DP_OP_109_122_7169/n1098 (net)                1                   0.00    7950.22 r
+  DP_OP_109_122_7169/U1183/Y (AO22X1_RVT)                 0.07      0.14    7950.37 r
+  DP_OP_109_122_7169/n115 (net)                 1                   0.00    7950.37 r
+  DP_OP_109_122_7169/U115/CO (FADDX1_RVT)                 0.08      0.20    7950.57 r
+  DP_OP_109_122_7169/n114 (net)                 1                   0.00    7950.57 r
+  DP_OP_109_122_7169/U114/CO (FADDX1_RVT)                 0.08      0.21    7950.78 r
+  DP_OP_109_122_7169/n113 (net)                 1                   0.00    7950.78 r
+  DP_OP_109_122_7169/U113/CO (FADDX1_RVT)                 0.09      0.22    7951.00 r
+  DP_OP_109_122_7169/n112 (net)                 1                   0.00    7951.00 r
+  DP_OP_109_122_7169/U112/CO (FADDX1_RVT)                 0.08      0.23    7951.23 r
+  DP_OP_109_122_7169/n111 (net)                 1                   0.00    7951.23 r
+  DP_OP_109_122_7169/U111/CO (FADDX1_RVT)                 0.08      0.21    7951.44 r
+  DP_OP_109_122_7169/n110 (net)                 1                   0.00    7951.44 r
+  DP_OP_109_122_7169/U110/CO (FADDX1_RVT)                 0.08      0.21    7951.65 r
+  DP_OP_109_122_7169/n109 (net)                 1                   0.00    7951.65 r
+  DP_OP_109_122_7169/U109/CO (FADDX1_RVT)                 0.08      0.21    7951.85 r
+  DP_OP_109_122_7169/n108 (net)                 1                   0.00    7951.85 r
+  DP_OP_109_122_7169/U108/CO (FADDX1_RVT)                 0.08      0.21    7952.06 r
+  DP_OP_109_122_7169/n107 (net)                 1                   0.00    7952.06 r
+  DP_OP_109_122_7169/U107/CO (FADDX1_RVT)                 0.08      0.21    7952.27 r
+  DP_OP_109_122_7169/n106 (net)                 1                   0.00    7952.27 r
+  DP_OP_109_122_7169/U106/CO (FADDX1_RVT)                 0.08      0.20    7952.48 r
+  DP_OP_109_122_7169/n105 (net)                 2                   0.00    7952.48 r
+  DP_OP_109_122_7169/U1194/Y (AO22X1_RVT)                 0.07      0.19    7952.67 r
+  DP_OP_109_122_7169/n104 (net)                 2                   0.00    7952.67 r
+  DP_OP_109_122_7169/U1232/Y (AO22X1_RVT)                 0.07      0.23    7952.90 r
+  DP_OP_109_122_7169/n103 (net)                 2                   0.00    7952.90 r
+  DP_OP_109_122_7169/U1234/Y (AO22X1_RVT)                 0.07      0.23    7953.13 r
+  DP_OP_109_122_7169/n102 (net)                 2                   0.00    7953.13 r
+  DP_OP_109_122_7169/U1245/Y (AO22X1_RVT)                 0.07      0.23    7953.36 r
+  DP_OP_109_122_7169/n101 (net)                 2                   0.00    7953.36 r
+  DP_OP_109_122_7169/U1247/Y (AO22X1_RVT)                 0.07      0.23    7953.59 r
+  DP_OP_109_122_7169/n1216 (net)                2                   0.00    7953.59 r
+  DP_OP_109_122_7169/U1268/Y (AO22X1_RVT)                 0.07      0.23    7953.82 r
+  DP_OP_109_122_7169/n99 (net)                  2                   0.00    7953.82 r
+  DP_OP_109_122_7169/U1270/Y (AO22X1_RVT)                 0.07      0.23    7954.05 r
+  DP_OP_109_122_7169/n98 (net)                  2                   0.00    7954.05 r
+  DP_OP_109_122_7169/U1269/Y (AO22X1_RVT)                 0.07      0.23    7954.28 r
+  DP_OP_109_122_7169/n97 (net)                  2                   0.00    7954.28 r
+  DP_OP_109_122_7169/U1343/Y (AO22X1_RVT)                 0.07      0.23    7954.52 r
+  DP_OP_109_122_7169/n96 (net)                  2                   0.00    7954.52 r
+  DP_OP_109_122_7169/U1347/Y (AO22X1_RVT)                 0.06      0.22    7954.74 r
+  DP_OP_109_122_7169/n95 (net)                  2                   0.00    7954.74 r
+  DP_OP_109_122_7169/U1130/Y (AO22X1_RVT)                 0.07      0.19    7954.93 r
+  DP_OP_109_122_7169/n94 (net)                  1                   0.00    7954.93 r
+  DP_OP_109_122_7169/U94/CO (FADDX1_RVT)                  0.09      0.23    7955.16 r
+  DP_OP_109_122_7169/n93 (net)                  1                   0.00    7955.16 r
+  DP_OP_109_122_7169/U93/CO (FADDX1_RVT)                  0.09      0.24    7955.40 r
+  DP_OP_109_122_7169/n92 (net)                  1                   0.00    7955.40 r
+  DP_OP_109_122_7169/U92/CO (FADDX1_RVT)                  0.09      0.24    7955.64 r
+  DP_OP_109_122_7169/n91 (net)                  1                   0.00    7955.64 r
+  DP_OP_109_122_7169/U91/CO (FADDX1_RVT)                  0.07      0.22    7955.86 r
+  DP_OP_109_122_7169/n90 (net)                  1                   0.00    7955.86 r
+  DP_OP_109_122_7169/U766/Y (XOR3X2_RVT)                  0.07      0.12    7955.98 r
+  DP_OP_109_122_7169/O1[33] (net)               1                   0.00    7955.98 r
+  DP_OP_109_122_7169/O1[33] (cv32e40p_mult_optimization_DP_OP_109_122_7169_0)
+                                                                    0.00    7955.98 r
+  short_mac[33] (net)                                               0.00    7955.98 r
+  U260/Y (AO22X1_RVT)                                     0.06      0.14    7956.12 r
+  short_mac_msb1 (net)                          2                   0.00    7956.12 r
+  U800/Y (AND2X1_RVT)                                     0.06      0.17    7956.29 r
+  n441 (net)                                    4                   0.00    7956.29 r
+  U806/Y (NBUFFX2_RVT)                                    0.05      0.33    7956.62 r
+  n447 (net)                                    6                   0.00    7956.62 r
+  U1403/Y (AO22X1_RVT)                                    0.06      0.69    7957.31 r
+  n793 (net)                                    2                   0.00    7957.31 r
+  U1465/Y (AO22X1_RVT)                                    0.05      0.17    7957.49 r
+  N204 (net)                                    1                   0.00    7957.49 r
+  U1008/Y (AO22X1_RVT)                                    0.08      0.15    7957.64 r
+  short_result[27] (net)                        5                   0.00    7957.64 r
+  U1144/Y (AO21X1_RVT)                                    0.05      0.47    7958.11 r
+  result_o[27] (net)                            1                   0.00    7958.11 r
+  result_o[27] (out)                                      0.05      0.00    7958.11 r    inf
+  data arrival time                                                         7958.11
+
+  clock clk (rise edge)                                            35.00      35.00
+  clock network delay (propagated)                                  0.00      35.00
+  clock uncertainty                                                -0.20      34.80
+  output external delay                                            -0.50      34.30
+  data required time                                                          34.30
+  ---------------------------------------------------------------------------------------------------------
+  data required time                                                          34.30
+  data arrival time                                                        -7958.11
+  ---------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                         -7923.81
+
+
