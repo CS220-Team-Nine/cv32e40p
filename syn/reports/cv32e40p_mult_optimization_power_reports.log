@@ -1,0 +1,54 @@
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : cv32e40p_mult_optimization
+Version: T-2022.03-SP3
+Date   : Mon Jun  2 06:09:01 2025
+****************************************
+
+
+Library(s) Used:
+
+    saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_ccs/saed32rvt_ss0p75v125c.db)
+
+
+Operating Conditions: ss0p75v125c   Library: saed32rvt_ss0p75v125c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+cv32e40p_mult_optimization
+                       35000             saed32rvt_ss0p75v125c
+cv32e40p_mult_optimization_DP_OP_110_123_1003_0
+                       8000              saed32rvt_ss0p75v125c
+cv32e40p_mult_optimization_DP_OP_109_122_7169_0
+                       8000              saed32rvt_ss0p75v125c
+cv32e40p_mult_optimization_DP_OP_107_125_268_0
+                       8000              saed32rvt_ss0p75v125c
+cv32e40p_mult_optimization_DP_OP_108_126_7310_0
+                       8000              saed32rvt_ss0p75v125c
+
+
+Global Operating Voltage = 0.75
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+cv32e40p_mult_optimization               25.423    0.000 5.25e+08  550.580 100.0
+  DP_OP_108_126_7310 (cv32e40p_mult_optimization_DP_OP_108_126_7310_0)
+                                          3.700    0.000 7.51e+07   78.777  14.3
+  DP_OP_107_125_268 (cv32e40p_mult_optimization_DP_OP_107_125_268_0)
+                                          6.172    0.000 1.15e+08  121.163  22.0
+  DP_OP_109_122_7169 (cv32e40p_mult_optimization_DP_OP_109_122_7169_0)
+                                          4.413    0.000 7.65e+07   80.904  14.7
+  DP_OP_110_123_1003 (cv32e40p_mult_optimization_DP_OP_110_123_1003_0)
+                                          6.808    0.000 1.15e+08  121.653  22.1
